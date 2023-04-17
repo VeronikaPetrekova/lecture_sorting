@@ -23,12 +23,22 @@ def read_data(file_name):
     return data
 
 
+
+def selection_sort(seznam):
+    x = len(seznam)
+    for i in range(x):
+        min_idx = i
+        for num_idx in range (i + 1, x):
+            if seznam[num_idx] < seznam[min_idx]:
+                min_idx = num_idx
+        seznam[i], seznam[min_idx] = seznam[min_idx], seznam [i]
+    return seznam
+
 def main():
     my_data = read_data("numbers.csv")
+    zoradenie = selection_sort(my_data["series_3"].copy())
     print(my_data["series_3"])
-
-
-def 
+    print(zoradenie)
 
 if __name__ == '__main__':
     main()
